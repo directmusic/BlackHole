@@ -118,7 +118,7 @@ enum
 //    multiple devices were supported, this state would need to be encapsulated in one or more structs
 //    so that each object's state can be tracked individually.
 //    Note also that we share a single mutex across all objects to be thread safe for the same reason.
-#define                             kPlugIn_BundleID                    "audio.existential.BlackHole"
+#define                             kPlugIn_BundleID                    "audio.direct.NoiseThruster"
 static pthread_mutex_t              gPlugIn_StateMutex                  = PTHREAD_MUTEX_INITIALIZER;
 static UInt32                       gPlugIn_RefCount                    = 0;
 static AudioServerPlugInHostRef     gPlugIn_Host                        = NULL;
@@ -127,8 +127,8 @@ static AudioServerPlugInHostRef     gPlugIn_Host                        = NULL;
 static CFStringRef                  gBox_Name                           = NULL;
 static Boolean                      gBox_Acquired                       = true;
 
-#define                             kDevice_UID                         "BlackHole_UID"
-#define                             kDevice_ModelUID                    "BlackHole_ModelUID"
+#define                             kDevice_UID                         "NoiseThruster_UID"
+#define                             kDevice_ModelUID                    "NoiseThruster_ModelUID"
 static pthread_mutex_t              gDevice_IOMutex                     = PTHREAD_MUTEX_INITIALIZER;
 static Float64                      gDevice_SampleRate                  = 44100.0;
 static UInt64                       gDevice_IOIsRunning                 = 0;
@@ -150,16 +150,16 @@ static bool                         gMute_Input_Master_Value            = false;
 static bool                         gMute_Output_Master_Value           = false;
 
 static const UInt32                 kDataSource_NumberItems             = 1;
-#define                             kDataSource_ItemNamePattern         "BlackHole %ich"
+#define                             kDataSource_ItemNamePattern         "NoiseThruster"
 
-#define                             DEVICE_NAME                         "BlackHole %ich"
-#define                             MANUFACTURER_NAME                   "Existential Audio Inc."
+#define                             DEVICE_NAME                         "NoiseThruster"
+#define                             MANUFACTURER_NAME                   "Direct"
 
 static UInt32                       gDataSource_Input_Master_Value      = 0;
 static UInt32                       gDataSource_Output_Master_Value     = 0;
 
 #define                             LATENCY_FRAME_SIZE                  0
-#define                             NUMBER_OF_CHANNELS                  16
+#define                             NUMBER_OF_CHANNELS                  2
 #define                             BITS_PER_CHANNEL                    32
 #define                             BYTES_PER_CHANNEL                   (BITS_PER_CHANNEL / 8)
 #define                             BYTES_PER_FRAME                     (NUMBER_OF_CHANNELS * BYTES_PER_CHANNEL)

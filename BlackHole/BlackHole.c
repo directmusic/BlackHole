@@ -3953,7 +3953,7 @@ static OSStatus	BlackHole_DoIOOperation(AudioServerPlugInDriverRef inDriver, Aud
                 Float32* ringSample = (Float32*)(ringBuffer + (ringBufferOffset + sample) % RING_BUFFER_SIZE);
 
                 // mix the two together scale by volume
-                *ringSample += *ioSample * gVolume_Output_Master_Value * gVolume_Input_Master_Value;
+                *ringSample += *ioSample;
             }
         }
 

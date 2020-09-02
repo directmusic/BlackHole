@@ -1,6 +1,10 @@
 This is a custom modification of BlackHole for my own private use.
 
-It clips the output at 0db as well as removing the ability to change the volume in reality while still being able to tell the system to read it.
+It limits the number of outputs to 2. As wel as letting the system change the volume of the driver without actually changing the output volume.
+
+The intention of this is to allow recording the system audio at full scale while having the appearance of being able to change it.
+
+I use the output volume data from this driver to adjust a selected device in my audio routing app.
 
 ## These are the modifications I made:
 

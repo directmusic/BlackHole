@@ -16,6 +16,4 @@ and
 `#define NUMBER_OF_CHANNELS 2`
 
 I enocourage you to support the individual who made the original software:
-
-
-![GitHub](https://img.shields.io/github/v/release/ExistentialAudio/BlackHole)
+[Blackhole on GitHub](https://github.com/ExistentialAudio/BlackHole)

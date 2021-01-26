@@ -8,16 +8,30 @@ I use the output volume data from this driver to adjust a selected device in my 
 
 ## These are the modifications I made:
 
+I added a clip function.
+
+
+`static float clip(float sample) {
+if (sample > 1)
+sample = 1;
+if (sample < -1)
+sample = -1;
+return sample;
+}`
+
+and changed
 
 `*ringSample += *ioSample * gVolume_Output_Master_Value * gVolume_Input_Master_Value;`
 
 to 
 
-`*ringSample += *ioSample;`
+`*ringSample += clip(*ioSample);`
 
 and
 
 `#define NUMBER_OF_CHANNELS 2`
+
+
 
 I enocourage you to support the individual who made the original software:
 [Blackhole on GitHub](https://github.com/ExistentialAudio/BlackHole)
